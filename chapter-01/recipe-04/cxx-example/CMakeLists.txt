@@ -5,6 +5,7 @@ cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 project(recipe-04 LANGUAGES CXX)
 
 # introduce a toggle for using a library
+# 定义逻辑变量并且设置默认值OFF
 set(USE_LIBRARY OFF)
 
 message(STATUS "Compile sources into a library? ${USE_LIBRARY}")
@@ -14,6 +15,7 @@ message(STATUS "Compile sources into a library? ${USE_LIBRARY}")
 set(BUILD_SHARED_LIBS OFF)
 
 # list sources
+# _sources也是一个变量，该变量表示Message.hpp Message.cpp
 list(APPEND _sources Message.hpp Message.cpp)
 
 if(USE_LIBRARY)
