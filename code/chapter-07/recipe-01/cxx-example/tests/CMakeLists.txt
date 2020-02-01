@@ -1,6 +1,8 @@
+# build and link the cpp_test executable
 add_executable(cpp_test test.cpp)
 target_link_libraries(cpp_test sum_integers)
 
+# 名为add_catch_test的macro，该macro有两个参数，分别为_name和_cost。
 macro(add_catch_test _name _cost)
   math(EXPR num_macro_calls "${num_macro_calls} + 1")
   message(STATUS "add_catch_test called with ${ARGC} arguments: ${ARGV}")
@@ -28,6 +30,8 @@ macro(add_catch_test _name _cost)
     )
 endmacro()
 
+# define two tests using add_catch and in addition,
+# we set and print the value of a variable
 set(num_macro_calls 0)
 
 add_catch_test(short 1.5)

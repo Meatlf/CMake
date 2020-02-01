@@ -2,7 +2,9 @@
 
 ##### CMake最低版本要求
 
-```cmake_minimum_required(version 2.8)```  
+```cmake
+cmake_minimum_required(version 3.5 FATAL_ERROR)
+```
 
 ##### 项目信息
 ```project(Demo)```  
@@ -12,12 +14,12 @@
 ```aux_source_directory(. DIR_SRCS)```
 
 ##### 设置变量
-```
+```cmake
 SET(LIBHELLLO_SRC hello.c)
 ```
 
 ##### 使用变量
-```
+```cmake
 ADD_LIBRARY(hello SHARED ${LIBHELLO_SRC})
 ```
 ##### 指定生成 MathFunctions 链接库

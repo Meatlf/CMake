@@ -33,3 +33,5 @@
 # Python stuff
 *.pyc
 venv/
+
+*.pdf
