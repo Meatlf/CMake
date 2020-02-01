@@ -6,9 +6,19 @@
 
 ## 7.1 Code reuse with functions and macros
 
-#### How to do it
+**相关章节**：第4章的Recipe 8。
 
+**Q**：CMake中的函数（functions）有什么用？
 
+**A**：抽象（隐藏）细节和避免重复代码。
+
+**Q**：如何理解CMake中的`macros`和`functions`？
+
+**A**：
+
+1）可以将CMake中的`macros`理解为C语言中的内联函数；
+
+2）可以将CMake中的`functions`理解为黑盒，不返回值。
 
 ## 7.2 Splitting CMake sources into modules
 

@@ -2,9 +2,9 @@
 
 EXECUTABLE=$1
 
-OUTPUT=$($EXECUTABLE 1 2 3 4)
+OUTPUT=$($EXECUTABLE 1 2 3 4 5 6)
 
-if [ "$OUTPUT" = "10" ]
+if [ "$OUTPUT" = "21" ]
 then
     exit 0
 else
