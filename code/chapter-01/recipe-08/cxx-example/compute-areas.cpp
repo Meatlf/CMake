@@ -1,3 +1,4 @@
+// 功能：计算不同几何形状的面积
 #include "geometry_circle.hpp"
 #include "geometry_polygon.hpp"
 #include "geometry_rhombus.hpp"
