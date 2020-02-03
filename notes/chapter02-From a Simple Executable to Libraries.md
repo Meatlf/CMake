@@ -10,6 +10,18 @@
 
 ## 1.4 Controlling compilation with conditionals
 
+**小结**：本小节主要介绍了通过`if-elseif-else-endif`来控制编译。
+
+### How to do it
+
+Q：如何理解CMake中的`list`？
+
+A：假设有一个变量`_sources`listing `Message.hpp`和`Message.cpp`：
+
+```cmake
+list(APPEND _sources Message.hpp Message.cpp)
+```
+
 ## 1.5 Presenting options to the user
 
 ## 1.6 Specifying the compiler
@@ -105,9 +117,35 @@ target_link_libraries(compute-areas geometry)
 
 `foreach-endforeach`
 
+### How to do it
 
+**Q**：如何设置source files的优化等级？
 
+**A**：利用`list`和`foreach`共同完成：
 
+```cmake
+list(
+APPEND sources_with_lower_optimization
+geometry_circle.cpp
+geometry_rhombus.cpp
+)
 
+message(STATUS "Setting source properties using IN LISTS syntax:")
+foreach(_source IN LISTS sources_with_lower_optimization)
+set_source_files_properties(${_source} PROPERTIES COMPILE_FLAGS -O2)
+message(STATUS "Appending -O2 flag for ${_source}")
+endforeach()
+```
 
+Q：如何打印source files的编译选项？
+
+A：利用`foreach`和`get_source_file_property`共同完成：
+
+```cmake
+message(STATUS "Querying sources properties using plain syntax:")
+foreach(_source ${sources_with_lower_optimization})
+get_source_file_property(_flags ${_source} COMPILE_FLAGS)
+message(STATUS "Source ${_source} has the following extra COMPILE_FLAGS: ${_flags}")
+endforeach()
+```
 
