@@ -6,6 +6,6 @@
 
 mkdir -p build
 cd build
-cmake -D USE_LIBRARY=ON ..
+cmake -DUSE_LIBRARY=ON ..
 cmake --build .
 ./hello-world

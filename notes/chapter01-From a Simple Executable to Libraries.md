@@ -2,11 +2,36 @@
 
 ## 1.1 Compiling a single source file into an executable
 
-**recipe-01**
-
 ## 1.2 Switching generators
 
 ## 1.3 Building and linking static and shared libraries
+
+**小结**:本小节介绍了如何从源码编译得到静态库`.a`
+
+**Q**:编译得到静态库的基本语法是什么?
+
+**A**:通过以下语句会得到名为libmessage.a的库.
+
+```cmake
+# generate a library from sources
+add_library(message
+  STATIC
+    Message.hpp
+    Message.cpp
+  )
+```
+
+Q:如何将静态库链接到可执行文件?
+
+A:
+
+```cmake
+add_executable(hello-world hello-world.cpp)
+
+target_link_libraries(hello-world message)
+```
+
+
 
 ## 1.4 Controlling compilation with conditionals
 
@@ -20,6 +45,36 @@ A：假设有一个变量`_sources`listing `Message.hpp`和`Message.cpp`：
 
 ```cmake
 list(APPEND _sources Message.hpp Message.cpp)
+```
+
+Q:如何设置以下if语句中的开关?
+
+```cmake
+if(USE_LIBRARY)
+  # add_library will create a static library
+  # since BUILD_SHARED_LIBS is OFF
+  add_library(message ${_sources})
+
+  add_executable(hello-world hello-world.cpp)
+
+  target_link_libraries(hello-world message)
+else()
+  add_executable(hello-world hello-world.cpp ${_sources})
+endif()
+```
+
+A:
+
+1)内设置:
+
+```cmake
+set(USE_LIBRARY OFF)
+```
+
+2)外设置:
+
+```shell
+cmake -DUSE_LIBRARY=ON ..
 ```
 
 ## 1.5 Presenting options to the user

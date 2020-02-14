@@ -6,7 +6,7 @@ project(recipe-04 LANGUAGES CXX)
 
 # introduce a toggle for using a library
 # 定义逻辑变量并且设置默认值OFF
-set(USE_LIBRARY OFF)
+# set(USE_LIBRARY OFF)
 
 message(STATUS "Compile sources into a library? ${USE_LIBRARY}")
 
