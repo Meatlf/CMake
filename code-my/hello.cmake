@@ -4,5 +4,5 @@ function(SIMPLE REQUIRED_ARG)
     set(${REQUIRED_ARG} "From SIMPLE" PARENT_SCOPE)
 endfunction()
 
-simple(This)
-message("Output: ${This}")
+simple(test)
+message("Output: ${test}")
