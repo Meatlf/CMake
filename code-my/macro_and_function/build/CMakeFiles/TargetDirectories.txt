@@ -1,0 +1,2 @@
+/home/user1/git/cmake-cookbook/code-my/macro_and_function/build/CMakeFiles/rebuild_cache.dir
+/home/user1/git/cmake-cookbook/code-my/macro_and_function/build/CMakeFiles/edit_cache.dir

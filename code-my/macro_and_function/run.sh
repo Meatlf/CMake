@@ -1,0 +1,1 @@
+cmake -P test7.cmake
