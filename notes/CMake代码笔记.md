@@ -3,6 +3,7 @@
 ## macro_and_function
 
 参考资料
+[1] [【使用CMake组织C++工程】3：CMake 函数和宏](https://elloop.github.io/tools/2016-04-11/learning-cmake-3-function-macro)
 
 ### test1.cmake
 
