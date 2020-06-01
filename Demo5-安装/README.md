@@ -16,3 +16,7 @@ make
 
 make install
 ```
+
+## 参考资料
+
+[1][【cmake】cmake的install指令](https://blog.csdn.net/qq_38410730/article/details/102837401)
